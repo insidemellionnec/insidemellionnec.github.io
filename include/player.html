@@ -1,0 +1,30 @@
+<div class="player" id="player" buffering="true">
+    <div id="ytp"></div>
+    <div class="ytp-cover"></div>
+    <div class="controls">
+        <div class="buttons">
+            <span class='button buffering fa fa-refresh spin'></span>
+            <span class='button play fa fa-play'></span>
+            <span class='button pause fa fa-pause'></span>
+        </div>
+
+        <div class="ui-bar">
+            <div class="progress">
+                <div class="line elapsed"></div>
+                <div class="line over"></div>
+                <div class="line track"></div>
+            </div>
+
+            <div id="chapters">
+                <div class="chapter" w3-repeat="chapters" start="{{start}}" style="left:{{startPerc}}%">
+                    <div class="title">{{title}}</div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+
+            <div id="time">
+                <div class="time" style="left:{{position}}%">{{time}}</div>
+            </div>
+        </div>
+    </div>
+</div>

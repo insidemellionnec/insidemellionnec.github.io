@@ -1,0 +1,98 @@
+.social-icon {
+    padding: 10px;
+    border-radius: 100%;
+    background: darkblue;
+    width: 1em;
+    height: 1em;
+}
+
+.social-icon.fa-facebook,
+.social-icon.fa-fb {
+    background-color: #39579a;
+}
+.social-icon.fa-facebook:hover,
+.social-icon.fa-fb:hover {
+    background-color: #4b6598;
+}
+
+.social-icon.fa-twitter,
+.social-icon.fa-tw {
+    background-color: #50abf1;
+}
+.social-icon.fa-twitter:hover,
+.social-icon.fa-tw:hover {
+    background-color: #00a8e5;
+}
+
+.social-icon.fa-linkedin {
+    background-color: #0077b5;
+}
+.social-icon.fa-linkedin:hover {
+    background: #006da8;
+}
+
+.social-icon.fa-pinterest {
+    background-color: #ce1e1f;
+}
+.social-icon.fa-pinterest:hover {
+    background: #bb2020;
+}
+
+.social-icon.fa-google-plus,
+.social-icon.fa-google-plus-official {
+    background-color: #df4a32;
+}
+.social-icon.fa-google-plus:hover,
+.social-icon.fa-google-plus-official:hover {
+    background-color: #c73c26;
+}
+
+.social-icon.fa-reddit {
+    background-color: #ff4300;
+}
+
+.social-icon.fa-email {
+    background-color: #5e7286;
+}
+.social-icon.fa-email:hover {
+    background: #48596b;
+}
+
+.social-icon.fa-tumblr {
+    background-color: #2c4762;
+}
+.social-icon.fa-tumblr:hover {
+    background-color: #243c53;
+}
+
+.social-icon.fa-whatsapp {
+    background-color: #4dc247;
+}
+
+.social-icon.fa-instagram {
+    background-color: #3f729b;
+}
+
+.social-icon.fa-instagram:hover {
+    background-color: #4B88B9;
+}
+
+.social-icon.fa-youtube {
+    background-color: #cd201f;
+}
+
+.social-icon.fa-youtube:hover {
+    background-color: #EA2524;
+}
+
+.social-icon.fa-linkedin {
+    background-color: #0077b5;
+}
+
+.social-icon.fa-linkedin:hover {
+    background-color: #005d8e;
+}
+
+.social-icon.fa-st {
+    background-color: #eb4924;
+}

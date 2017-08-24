@@ -1,0 +1,210 @@
+#player {
+    background: black;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+#player .controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 100px 160px 30px 100px;
+    opacity: .4;
+    transition: all 800ms;
+}
+
+#player iframe {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 56.25vw;
+    width: 100%;
+}
+
+#player .controls:hover {
+    opacity: 1;
+}
+
+#player .controls:before {
+    content: '';
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    transition: all 800ms;
+    opacity: .1;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,.4) 100%);
+}
+
+#player .controls:hover:before {
+    opacity: .9;
+}
+
+#player .controls .buttons {
+    float: left;
+    padding: 0 20px 0 0;
+    box-sizing: border-box;
+    color: white;
+    font-size: 18px;
+}
+
+#player .controls .button {
+    cursor: pointer;
+    transform: translate(0, -50%);
+    padding: 12px;
+    width: 16px;
+    height: 18px;
+    text-align: center;
+}
+
+#player .controls .button.spin {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(0, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(0, -50%) rotate(359deg);
+    }
+}
+
+#player .progress {
+    overflow: hidden;
+    position: relative;
+    height: 10px;
+    top: -5px;
+    cursor: pointer;
+}
+
+#player .progress .line {
+    height: 1px;
+    background: white;
+    opacity: .2;
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 1px;
+    transition: all 200ms, width 0ms linear;
+}
+
+#player .progress .line.track {
+    width: 100%;
+}
+#player .progress .line.elapsed {
+    opacity: 1;
+}
+
+#player .progress:hover .line {
+    height: 6px;
+}
+
+#player[buffering='true'] .play,
+#player[playing='true'] .play {
+    display: none;
+}
+
+#player[buffering='true'] .pause,
+#player[playing='false'] .pause {
+    display: none;
+}
+
+#player[buffering='false'] .buffering {
+    display: none;
+}
+
+#player .button.play.fa.fa-play {
+    text-indent: 3px;
+}
+
+#chapters .chapter:hover .dot,
+#player .progress:hover + #chapters .chapter .dot {
+    width: 10px;
+    height: 10px;
+}
+
+#chapters {
+    position: relative;
+    top: -10px;
+    height: 0;
+    margin-left: 60px;
+    transition: all 200ms;
+}
+
+#chapters .chapter {
+    position: absolute;
+    padding: 10px;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+}
+
+#chapters .chapter .dot {
+    background-color: white;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    transition: all 200ms;
+    transform: translate(-50%, -50%);
+}
+
+#chapters .chapter:hover {
+    cursor: pointer;
+}
+
+#chapters .chapter:hover .title {
+    opacity: 1;
+    bottom: 30px;
+}
+
+#chapters .chapter .title {
+    transition: all 300ms ease-in-out;
+    pointer-events: none;
+    color: white;
+    opacity: 0;
+    position: absolute;
+    bottom: 25px;
+    width: 150px;
+    font-size: .9em;
+    font-weight: 300;
+    font-family: sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+.ytp-cover {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+    display: block;
+}
+
+#time {
+    position: relative;
+    margin-left: 60px;
+    color: white;
+    display: none;
+}
+
+#time .time {
+    position: absolute;
+    display: inline;
+    text-align: left;
+    top: -50px;
+    transform: translate(-50%, 0);
+}

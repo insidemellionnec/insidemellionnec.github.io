@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'mosk';
+  src: url("../fonts/Mosk_Light_300.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'mosk';
+  src: url("../fonts/Mosk_Medium_500.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'mosk';
+  src: url("../fonts/Mosk_Bold_700.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'mosk';
+  src: url("../fonts/Mosk_Ultra-Bold_900.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal; }

@@ -1,0 +1,10 @@
+.col {
+    background: rgba(0,0,255,0.1);
+}
+.row {
+    background: rgba(0,255,0,0.1);
+}
+.spacer {
+    background: rgba(255,0,0,0.1);
+    border: 1px solid black;
+}

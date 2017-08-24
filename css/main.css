@@ -1,0 +1,82 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.4/jquery.fullpage.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('./normalize.css');
+@import url('./social_icons.css');
+@import url('./grid.css');
+@import url('./depth.css');
+/* @import url('./parallax.css'); */
+@import url('./helpers.css');
+@import url('./spacer.css');
+@import url('./video-container.css');
+@import url('./player.css');
+
+body {
+    font-family: mosk, helvetica, arial, sans-serif;
+    background: #fafafa;
+}
+
+html {
+    touch-action: manipulation;
+}
+
+a {
+    color: inherit;
+}
+
+.container {
+    margin: 0 auto;
+    width: 95%;
+}
+
+[page],
+[toggle] {
+    cursor: pointer;
+}
+
+img[lazy-img],
+img[lazy-loading] {
+    opacity: 0;
+}
+
+.responsive-image {
+    width: 100%;
+}
+
+#menu {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+    transform: translate3d(0, -50%,0);
+    transition: all 200ms;
+}
+
+#menu a {
+    height: 10px;
+    width: 10px;
+    background: red;
+    margin: 15px;
+    border-radius: 50%;
+    display: block;
+}
+
+#menu a.active {
+    height: 12px;
+    width: 12px;
+    background: #734444;
+}
+
+.section {
+    transition: all 500ms;
+    background-position: 0% center;
+    opacity: 0;
+}
+
+.section.active {
+    opacity: 1;
+}
+
+.section.fp-completely {
+    background-position: 10% center;
+}
