@@ -31,7 +31,7 @@ function init() {
 
         $('#fullpage').fullpage({
             //settings
-            anchors: ['section0', 'section1', 'section2', 'section3'],
+            anchors: ['section0', 'section1', 'section2', 'section3', 'section4', 'section5'],
             menu: '#menu',
 
 
