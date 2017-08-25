@@ -173,7 +173,17 @@ p.side {
     }
 
     #menu {
-        display: none;
+        /* display: none; */
+        bottom: 0;
+        top: auto;
+        left: 0;
+        right: 0;
+        margin: auto;
+        text-align: center;
+    }
+    #menu a {
+        display: inline-block;
+        margin: 5px;
     }
 }
 
@@ -255,21 +265,21 @@ p.side {
 }
 
 .fp-completely .fade-in-left {
-    -webkit-animation: fade-in-left 1.2s forwards;
-            animation: fade-in-left 1.2s forwards;
+    -webkit-animation: fade-in-left 0.7s forwards;
+            animation: fade-in-left 0.7s forwards;
 }
 .fp-completely .fade-in-right {
-    -webkit-animation: fade-in-right 1.2s forwards;
-            animation: fade-in-right 1.2s forwards;
+    -webkit-animation: fade-in-right 0.7s forwards;
+            animation: fade-in-right 0.7s forwards;
 }
 .fp-completely .fade-in-bottom {
-    -webkit-animation: fade-in-bottom 1.2s forwards;
-            animation: fade-in-bottom 1.2s forwards;
+    -webkit-animation: fade-in-bottom 0.7s forwards;
+            animation: fade-in-bottom 0.7s forwards;
 }
 
 .fp-completely .fade-in {
-    -webkit-animation: fade-in 1.2s forwards;
-            animation: fade-in 1.2s forwards;
+    -webkit-animation: fade-in 0.7s forwards;
+            animation: fade-in 0.7s forwards;
 }
 
 @keyframes glow {
