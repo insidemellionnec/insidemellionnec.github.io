@@ -153,7 +153,7 @@ img[lazy-loading] {
 }
 
 .quote .material-icons:last-of-type {
-    position: static;
+    /* position: static; */
 }
 
 .section {
