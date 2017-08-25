@@ -27,11 +27,11 @@ function init() {
         // load lazy loaded elements
         checkLazyElements();
 
-        initYTPlayer();
+        initPlayer();
 
         $('#fullpage').fullpage({
             //settings
-            anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage', 'lastPage'],
+            anchors: ['section0', 'section1', 'section2', 'section3'],
             menu: '#menu',
 
 

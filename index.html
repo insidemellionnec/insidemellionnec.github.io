@@ -1,14 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <title>Stage</title>
+    <title>Inside Mellionnec</title>
     <link href="/css/main.css" type="text/css" rel="stylesheet"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <script src="https://www.youtube.com/iframe_api"></script>
   </head>
   <body>
-    <div id="content" w3-include-html="/page/main.html"></div>
+    
+    <div id="menu">
+        <a data-menuanchor="section0" href="#section0"></a>
+        <a data-menuanchor="section1" href="#section1"></a>
+        <a data-menuanchor="section2" href="#section2"></a>
+        <a data-menuanchor="section3" href="#section3"></a>
+    </div>
+    <div id="fullpage" class="center">
+        <div class="section" id="s0">
+          <video data-autoplay class="fullscreen-video" autoplay playsinline webkit-playsinline muted loop poster="/images/homepage-splash.png" src="/videos/homepage-24fps2.mp4"></video>
+        </div>
+        <div class="section" id="s1" style="background-image: url(/images/map.png); background-size: cover; background-position:center center;"></div>
+        <div class="section" id="s2" >Some section</div>
+        <div class="section" id="s3" >
+            <div w3-include-html="include/player.html"></div>
+        </div>
+    </div>
+
 
     <script src="/js/w3.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
