@@ -37,23 +37,10 @@ function init() {
 
             // callbacks
             onLeave: function onSectionLeave(index, nextIndex, direction) {
-                console.log('left to ' + nextIndex);
-                var playerContainer = $('#player').parent('.section')[0];
-                var isLeavingPlayer = $('.section')[index] == playerContainer;
-
-                if (isLeavingPlayer) {
-                    player.pause();
-                }
+                eval($('.section')[index - 1].getAttribute('onleave'));
             },
             afterLoad: function(anchorLink, index) {
-                console.log("load");
-
-                var playerContainer = $('#player').parent('.section')[0];
-                var isEnteringPlayer = $('.section')[index] == playerContainer;
-
-                if (isEnteringPlayer) {
-                    player.play();
-                }
+                eval($('.section')[index - 1].getAttribute('onenter'));
             },
         });
     });

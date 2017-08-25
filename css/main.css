@@ -43,7 +43,14 @@ a {
 
 .container {
     margin: 0 auto;
-    width: 95%;
+    width: 90%;
+}
+
+img.static-logo {
+    position: fixed;
+    top: 1vw;
+    left: 1vw;
+    width: 100px;
 }
 
 [page],
@@ -112,8 +119,8 @@ img[lazy-loading] {
 #menu a {
     height: 7px;
     width: 7px;
-    border: 3px solid #f7f7f7;
-    background: #f7f7f7;
+    border: 3px solid #7b1315;
+    background: #7b1315;
     margin: 15px;
     border-radius: 50%;
     display: block;

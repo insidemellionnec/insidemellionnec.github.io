@@ -76,13 +76,18 @@ Player.prototype.renderChapters = function(model) {
     w3.displayObject("chapters", model);
 }
 
+var autoplayOnReady = false;
 Player.prototype.onPlayerReady = function() {
     this.renderInterval = setInterval(this.render.bind(this), 1000);
     this.updateModelWithVideoData(this.model);
     this.renderChapters(this.model);
     this.element.on('mousemove mouseover mouseleave', '.progress', this.onProgressMouseEvent.bind(this));
-    this.goto(0);
-    this.pause();
+    if (autoplayOnReady) {
+        this.play();
+    } else {
+        this.goto(0);
+        this.pause();
+    }
 }
 
 Player.prototype.updateModelWithVideoData = function(model) {
@@ -140,7 +145,11 @@ Player.prototype.onProgressMouseEvent = function(ev) {
 }
 
 Player.prototype.play = function(ev) {
-    this.ytp.playVideo();
+    if (this.ytp.playVideo) {
+        this.ytp.playVideo();
+    } else {
+        autoplayOnReady = true;
+    }
 }
 
 Player.prototype.stop = function(ev) {
@@ -183,6 +192,10 @@ Player.prototype.getElapsedPerc = function() {
 
 Player.prototype.getDuration = function() {
     return this.ytp.getDuration();
+}
+
+Player.prototype.canPlay = function() {
+    return window.YT && window.YT.loaded;
 }
 
 Player.prototype.canSeek = function() {
