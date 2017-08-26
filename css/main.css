@@ -77,6 +77,7 @@ img[lazy-loading] {
 }
 
 .logo {
+    border: 5px solid #7b1315;
     position: absolute;
     top: 0;
     background: rgba(255,255,255,.5);
@@ -204,30 +205,66 @@ p.side {
 }
 
 .quote {
-    max-width: 70vw;
     margin: auto;
-    font-size: 3vw;
+    font-size: 30px;
     word-spacing: 8px;
     letter-spacing: 2px;
-    text-align: left;
+    text-align: justify;
     line-height: 1.8em;
     position: relative;
     font-family: 'Raleway', sans-serif;
     font-weight: 200;
+    width: 730px;
+    max-width: 90%;
 }
 
-.quote .material-icons {
-    font-size: 4vw;
+.quote-credits {
     position: absolute;
+    bottom: -120px;
+    right: 10%;
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
 }
 
-.quote .material-icons:first-of-type {
+.quote-credits:before {
+    content: '';
+    position: absolute;
+    border-top: 1px solid #7b151a;
+    top: 50%;
+    width: 50px;
+    left: -70px;
+}
+
+@media (max-width: 1023px) {
+    .quote-credits,
+    .quote {
+        font-size: 16px;
+        max-width: 70%;
+    }
+
+    .quote-credits {
+        bottom: -60px;
+    }
+    .quote img {
+        display: block;
+        position: static;
+        margin: 16px auto;
+    }
+}
+
+.left-quote {
+    width: 60px;
+    position: absolute;
+    left: -85px;
+    top: -16px;
+}
+
+.right-quote {
+    width: 60px;
+    position: absolute;
+    right: -75px;
+    bottom: -16px;
     transform: rotate(180deg);
-    left: -1em;
-}
-
-.quote .material-icons:last-of-type {
-    /* position: static; */
 }
 
 .section {
