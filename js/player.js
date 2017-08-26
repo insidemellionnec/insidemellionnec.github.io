@@ -15,13 +15,16 @@ function Chapter(start, title, thumbnail) {
 
 var playerModel = {
     chapters: [
-        new Chapter(0, 'Chapter 1'),
-        new Chapter("3:45", "3:45"),
-        new Chapter(300),
-        new Chapter(500),
-        new Chapter(900),
-        new Chapter(1200),
-        new Chapter(1500)
+        new Chapter("00:05", 'Introduction'),
+        new Chapter("01:40", 'Pourquoi Mellionnec?'),
+        new Chapter("04:11", "Phase d'écriture"),
+        new Chapter("06:35", 'Construction du récit'),
+        new Chapter("08:57", 'Le réel'),
+        new Chapter("13:59", 'Tout montrer?'),
+        new Chapter("16:17", 'Esthétique'),
+        new Chapter("19:04", 'La place du réalisateur'),
+        new Chapter("21:38", 'Les sujets'),
+        new Chapter("23:57", 'Le but du documentaire')
     ]
 };
 
