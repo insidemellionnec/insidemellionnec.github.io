@@ -389,10 +389,31 @@ p.side {
     margin-left: -6%;
 }
 
+.max-1200 {
+    max-width: 1200px;
+    margin: auto;
+}
+
+.autor {
+    float: left;
+    padding: 3%;
+    cursor: pointer;
+    width: 44%;
+    text-align: center;
+}
+.autor:hover {
+    background: #eee;
+}
+
+.autor .name {
+    display: inline-block;
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+}
 
 .device {
-    width: 300px;
-    float: left;
+    width: 200px;
+    max-width: 25vw;
     margin: auto;
     position: relative;
 }
@@ -404,8 +425,8 @@ p.side {
     position: absolute;
     top: 41.5%;
     transition: all 1s ease-in-out;
-    width: 36.3%;
-    left: 36.3%;
+    width: 36.5%;
+    left: 36.5%;
 }
 
 .autor:hover .camara .lente {
@@ -434,8 +455,8 @@ p.side {
 
 .super8 .lente_1 {
     position: absolute;
-    top: 30.8%;
-    transition: all 1s ease-in-out;
+    top: 31%;
+    transition: all 1s linear;
     left: 69.5%;
     width: 12.5%;
 }
