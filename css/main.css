@@ -397,8 +397,8 @@ p.side {
 .autor {
     float: left;
     padding: 3%;
+    box-sizing: border-box;
     cursor: pointer;
-    width: 44%;
     text-align: center;
 }
 .autor:hover {
