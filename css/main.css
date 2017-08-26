@@ -46,25 +46,6 @@ a {
     width: 90%;
 }
 
-
-.leftSide,
-.rightSide {
-    position: absolute;
-    left: 50%;
-    top: 25%;
-    width: 50%;
-    height: 50%;
-    overflow: scroll;
-    background-image: url('/images/iglesia.png');
-    background-size: cover;
-    background-position: right center;
-}
-
-.leftSide {
-    left: 0;
-    background-position: left center;
-}
-
 img.static-logo {
     position: fixed;
     top: 1vw;
@@ -140,19 +121,31 @@ img[lazy-loading] {
 }
 
 h1 {
-    font-size: 3vw;
+    font-size: 40px;
+    margin-top: 0;
+}
+
+h1.title {
+    padding-left: 20px;
+    border-left: 1px solid #7b1315;
+    text-align: left;
 }
 
 p.side {
     margin: auto;
-    font-size: 1.4vw;
+    font-size: 18px;
     word-spacing: 2px;
     letter-spacing: 2px;
-    text-align: center;
-    line-height: 1.7em;
+    text-align: justify;
+    line-height: 1.8em;
     position: relative;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
+    padding: 0 20px;
+}
+
+.full-height {
+    height: 100vh;
 }
 
 @media (max-aspect-ratio: 16/9) {
@@ -188,8 +181,7 @@ p.side {
 }
 
 @media (max-width: 1023px) {
-    .leftSide,
-    .rightSide {
+    .hide-small {
         display: none;
     }
 
@@ -201,6 +193,14 @@ p.side {
     h1 {
         font-size: 1.5em;
     }
+}
+
+.black-and-white {
+    height: 100vh;
+}
+
+.row {
+    height: 100vh;
 }
 
 .quote {
@@ -343,6 +343,14 @@ p.side {
     }
 }
 
+.carte {
+    margin: 10% auto;
+    width: 80%;
+}
+
+.eglise {
+    margin-left: -6%;
+}
 
 
 .device {
@@ -445,7 +453,7 @@ p.side {
     height: 20px;
     transform: rotate(45deg);
     background: white;
-    opacity: 0.2;
+    opacity: .2;
     top: 30px;
     left: -50%;
     transition: all 1s ease-in-out;
@@ -457,7 +465,7 @@ p.side {
     height: 7px;
     transform: rotate(45deg);
     background: white;
-    opacity: 0.2;
+    opacity: .2;
     top: 80px;
     left: -50%;
     transition: all 1s ease-in-out;

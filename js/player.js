@@ -162,7 +162,9 @@ Player.prototype.destroy = function(ev) {
 }
 
 Player.prototype.pause = function(ev) {
-    this.ytp.pauseVideo();
+    if (this.ytp.pauseVideo) {
+        this.ytp.pauseVideo();
+    }
 }
 
 Player.prototype.goto = function(secs) {
@@ -203,23 +205,23 @@ Player.prototype.canSeek = function() {
 }
 
 Player.prototype.isPlaying = function() {
-    return this.ytp.getPlayerState() == 1;
+    return this.ytp.getPlayerState && this.ytp.getPlayerState() == 1;
 }
 
 Player.prototype.isPaused = function() {
-    return this.ytp.getPlayerState() == 2;
+    return this.ytp.getPlayerState && this.ytp.getPlayerState() == 2;
 }
 
 Player.prototype.isBuffering = function() {
-    return this.ytp.getPlayerState() == 3;
+    return this.ytp.getPlayerState && this.ytp.getPlayerState() == 3;
 }
 
 Player.prototype.isEnded = function() {
-    return this.ytp.getPlayerState() == 0;
+    return this.ytp.getPlayerState && this.ytp.getPlayerState() == 0;
 }
 
 Player.prototype.isUnstarted = function() {
-    return this.ytp.getPlayerState() == -1;
+    return this.ytp.getPlayerState && this.ytp.getPlayerState() == -1;
 }
 
 Player.prototype.onStateChange = function() {
