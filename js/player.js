@@ -39,7 +39,7 @@ function onYouTubeIframeAPIReady() {
 
 function initPlayer() {
     if (!player && window.YT && window.YT.loaded && $('#player').length) {
-        player = new Player('CKb7BRfFPjU', playerModel);
+        player = new Player('u6Z0SxuIzHQ', playerModel);
     }
 }
 
