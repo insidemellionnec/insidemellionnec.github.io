@@ -225,7 +225,7 @@ p.side {
     max-width: 90%;
     text-align: right;
     position: relative;
-    margin: 50px auto;
+    margin: 50px auto 0;
     padding-right: 60px;
 }
 
