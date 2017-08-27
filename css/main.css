@@ -424,3 +424,17 @@ p.side {
     font-family: 'Raleway', sans-serif;
     font-style: italic;
 }
+
+#scroll-arrow:after {
+    content: 'Voir plus';
+    display: block;
+    position: absolute;
+    top: -25px;
+    font-size: 15px;
+    left: -140px;
+    right: 0;
+    width: 300px;
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}

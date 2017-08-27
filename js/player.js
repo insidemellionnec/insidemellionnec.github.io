@@ -252,7 +252,9 @@ Player.prototype.render = function() {
     this.element.attr('buffering', this.isBuffering());
     this.element.attr('unstarted', this.isUnstarted());
 
-    this.updateProgressBar();
+    if (this.isPlaying() || this.isPaused()) {
+        this.updateProgressBar();
+    }
 }
 
 Player.prototype.updateProgressBar = function() {
