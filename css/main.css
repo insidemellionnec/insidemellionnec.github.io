@@ -142,7 +142,6 @@ p.side {
     position: relative;
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
-    padding: 0 20px;
 }
 
 .full-height {
@@ -219,20 +218,23 @@ p.side {
 }
 
 .quote-credits {
-    position: absolute;
-    bottom: -120px;
-    right: 10%;
     font-weight: 300;
     font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    width: 730px;
+    max-width: 90%;
+    text-align: right;
+    position: relative;
+    margin: 50px 50px 0;
 }
 
 .quote-credits:before {
     content: '';
-    position: absolute;
+    display: inline-block;
     border-top: 1px solid #7b151a;
-    top: 50%;
+    margin-bottom: 0.3em;
     width: 50px;
-    left: -70px;
+    margin-right: 20px;
 }
 
 @media (max-width: 1023px) {
@@ -243,12 +245,12 @@ p.side {
     }
 
     .quote-credits {
-        bottom: -60px;
     }
     .quote img {
         display: block;
         position: static;
         margin: 16px auto;
+        width: 30px;
     }
 }
 
@@ -391,12 +393,12 @@ p.side {
 
 .max-1200 {
     max-width: 1200px;
-    margin: auto;
 }
 
 .autor {
     float: left;
-    padding: 3%;
+    padding: 10px;
+    width: 25%;
     box-sizing: border-box;
     cursor: pointer;
     text-align: center;
@@ -409,6 +411,20 @@ p.side {
     display: inline-block;
     font-family: 'Raleway', sans-serif;
     font-size: 28px;
+}
+
+@media (max-width: 1023px) {
+    .autor .name {
+        font-size: 1.2em;
+        line-height: 1.2em;
+    }
+}
+
+@media (max-width: 1100px) {
+    .autor {
+        width: 50%;
+        min-height: 25vh;
+    }
 }
 
 .device {
