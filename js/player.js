@@ -31,13 +31,14 @@ var playerModel = {
 // 3. This function creates an <iframe> (and YouTube player)
 //    after the API code downloads.
 var player;
+var playerState = -5;
 
 function onYouTubeIframeAPIReady() {
     initPlayer();
 }
 
 function initPlayer() {
-    if (window.YT && window.YT.loaded && $('#player').length) {
+    if (!player && window.YT && window.YT.loaded && $('#player').length) {
         player = new Player('CKb7BRfFPjU', playerModel);
     }
 }
@@ -46,7 +47,7 @@ function Player(videoId, model) {
     this.element = $('#player');
     this.element.attr('ready', false);
     this.model = model;
-    this.ytp = new YT.Player('ytp', {
+    otherYoutubePlayer = new YT.Player('ytp', {
         height: '390',
         width: '640',
         videoId: videoId,
@@ -80,7 +81,8 @@ Player.prototype.renderChapters = function(model) {
 }
 
 var autoplayOnReady = false;
-Player.prototype.onPlayerReady = function() {
+Player.prototype.onPlayerReady = function(event) {
+    youTubePlayer = event.target;
     this.renderInterval = setInterval(this.render.bind(this), 1000);
     this.updateModelWithVideoData(this.model);
     this.renderChapters(this.model);
@@ -148,25 +150,25 @@ Player.prototype.onProgressMouseEvent = function(ev) {
 }
 
 Player.prototype.play = function(ev) {
-    if (this.ytp.playVideo) {
-        this.ytp.playVideo();
+    if (youTubePlayer.playVideo) {
+        youTubePlayer.playVideo();
     } else {
         autoplayOnReady = true;
     }
 }
 
 Player.prototype.stop = function(ev) {
-    this.ytp.stopVideo();
+    youTubePlayer.stopVideo();
 }
 
 Player.prototype.destroy = function(ev) {
-    this.ytp.destroy();
+    youTubePlayer.destroy();
     clearInterval(this.renderInterval);
 }
 
 Player.prototype.pause = function(ev) {
-    if (this.ytp.pauseVideo) {
-        this.ytp.pauseVideo();
+    if (youTubePlayer.pauseVideo) {
+        youTubePlayer.pauseVideo();
     } else {
         autoplayOnReady = false;
     }
@@ -174,7 +176,7 @@ Player.prototype.pause = function(ev) {
 
 Player.prototype.goto = function(secs) {
     if (this.canSeek()) {
-        this.ytp.seekTo(secs);
+        youTubePlayer.seekTo(secs);
     }
 }
 
@@ -190,7 +192,7 @@ Player.prototype.percToTrackSecs = function(perc) {
 }
 
 Player.prototype.getElapsed = function() {
-    return this.ytp.getMediaReferenceTime();
+    return youTubePlayer.getMediaReferenceTime();
 }
 
 Player.prototype.getElapsedPerc = function() {
@@ -198,7 +200,7 @@ Player.prototype.getElapsedPerc = function() {
 }
 
 Player.prototype.getDuration = function() {
-    return this.ytp.getDuration();
+    return youTubePlayer.getDuration();
 }
 
 Player.prototype.canPlay = function() {
@@ -210,29 +212,27 @@ Player.prototype.canSeek = function() {
 }
 
 Player.prototype.isPlaying = function() {
-    return this.ytp.getPlayerState && this.ytp.getPlayerState() == 1;
+    return playerState == 1;
 }
 
 Player.prototype.isPaused = function() {
-    return this.ytp.getPlayerState && this.ytp.getPlayerState() == 2;
+    return playerState == 2;
 }
 
 Player.prototype.isBuffering = function() {
-    return this.ytp.getPlayerState && this.ytp.getPlayerState() == 3;
+    return playerState == 3;
 }
 
 Player.prototype.isEnded = function() {
-    return this.ytp.getPlayerState && this.ytp.getPlayerState() == 0;
+    return playerState == 0;
 }
 
 Player.prototype.isUnstarted = function() {
-    return this.ytp.getPlayerState && this.ytp.getPlayerState() == -1;
+    return playerState == -1;
 }
 
 Player.prototype.onStateChange = function(event) {
-    if (event.data < 0) {
-        return;
-    }
+    playerState = event.data;
     if (this.isUnstarted()) {
         this.element.attr('ready', true);
     }
