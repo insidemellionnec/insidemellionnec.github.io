@@ -56,6 +56,12 @@ img.static-logo {
     width: 100px;
 }
 
+@media (max-width: 1023px) {
+    img.static-logo {
+        display: none;
+    }
+}
+
 [page],
 [toggle] {
     cursor: pointer;
@@ -189,12 +195,12 @@ p.side {
     }
 
     p.side {
-        font-size: 1em;
+        font-size: 0.9em;
         line-height: 1.2em;
     }
 
     h1 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
 }
 
