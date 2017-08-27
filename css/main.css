@@ -432,7 +432,7 @@ p.side {
 }
 
 #scroll-arrow:after {
-    content: 'Au cœur de la création documentaire';
+    content: 'Au cœur de la création documentaire';
     display: block;
     position: absolute;
     top: -25px;
