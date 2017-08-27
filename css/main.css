@@ -122,7 +122,7 @@ img[lazy-loading] {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 2em;
     margin-top: 0;
 }
 
@@ -134,7 +134,7 @@ h1.title {
 
 p.side {
     margin: auto;
-    font-size: 18px;
+    font-size: 1em;
     word-spacing: 2px;
     letter-spacing: 2px;
     text-align: justify;
