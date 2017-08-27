@@ -362,7 +362,8 @@ p.side {
 .autor .name {
     display: inline-block;
     font-family: 'Raleway', sans-serif;
-    font-size: 28px;
+    font-size: 26px;
+    margin-top: 10px;
 }
 
 @media (max-width: 1023px) {
@@ -411,4 +412,15 @@ p.side {
     background: #7b1315;
     cursor: auto;
     white-space: normal;
+}
+
+.prochain {
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    text-align: center;
+    margin: auto;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
 }

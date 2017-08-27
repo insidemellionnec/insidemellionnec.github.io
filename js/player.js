@@ -167,6 +167,8 @@ Player.prototype.destroy = function(ev) {
 Player.prototype.pause = function(ev) {
     if (this.ytp.pauseVideo) {
         this.ytp.pauseVideo();
+    } else {
+        autoplayOnReady = false;
     }
 }
 
