@@ -31,9 +31,9 @@ function init() {
 
         $('#fullpage').fullpage({
             //settings
-            anchors: ['section0', 'section1', 'section2', 'section3', 'section4', 'section5'],
+            anchors: ['section0', 'section1', 'section2', 'section3', 'section4', 'section5', 'section6'],
             menu: '#menu',
-
+            touchSensitivity: 50,
 
             // callbacks
             onLeave: function onSectionLeave(index, nextIndex, direction) {

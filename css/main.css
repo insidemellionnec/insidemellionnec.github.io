@@ -10,6 +10,9 @@
 @import url('./spacer.css');
 @import url('./video-container.css');
 @import url('./player.css');
+@import url('./marco.css');
+@import url('./quote.css');
+@import url('./camaras.css');
 
 body {
     font-family: mosk, helvetica, arial, sans-serif;
@@ -203,75 +206,8 @@ p.side {
     height: 100vh;
 }
 
-.quote {
-    margin: auto;
-    font-size: 30px;
-    word-spacing: 8px;
-    letter-spacing: 2px;
-    text-align: justify;
-    line-height: 1.8em;
-    position: relative;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 200;
-    width: 730px;
-    max-width: 90%;
-}
-
-.quote-credits {
-    font-weight: 300;
-    font-family: 'Raleway', sans-serif;
-    font-size: 25px;
-    width: 730px;
-    max-width: 90%;
-    text-align: right;
-    position: relative;
-    margin: 50px auto 0;
-    padding-right: 60px;
-}
-
-.quote-credits:before {
-    content: '';
-    display: inline-block;
-    border-top: 1px solid #7b151a;
-    margin-bottom: .3em;
-    width: 50px;
-    margin-right: 20px;
-}
-
-@media (max-width: 1023px) {
-    .quote-credits,
-    .quote {
-        font-size: 16px;
-        max-width: 70%;
-    }
-
-    .quote-credits {
-    }
-    .quote img {
-        display: block;
-        position: static;
-        margin: 16px auto;
-        width: 30px;
-    }
-}
-
-.left-quote {
-    width: 60px;
-    position: absolute;
-    left: -85px;
-    top: -16px;
-}
-
-.right-quote {
-    width: 60px;
-    position: absolute;
-    right: -75px;
-    bottom: -16px;
-    transform: rotate(180deg);
-}
-
 .section {
-    transition: all 500ms;
+    transition: all 200ms;
     opacity: 0;
     overflow: hidden;
 }
@@ -396,6 +332,16 @@ p.side {
     max-width: 1200px;
 }
 
+@media (min-width: 1344px) {
+    .max-1200 {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+.retrato,
 .autor {
     float: left;
     padding: 10px;
@@ -408,6 +354,11 @@ p.side {
     background: #eee;
 }
 
+.retrato {
+    padding: 25px;
+}
+
+.retrato .name,
 .autor .name {
     display: inline-block;
     font-family: 'Raleway', sans-serif;
@@ -415,6 +366,7 @@ p.side {
 }
 
 @media (max-width: 1023px) {
+    .retrato .name,
     .autor .name {
         font-size: 1.2em;
         line-height: 1.2em;
@@ -422,149 +374,41 @@ p.side {
 }
 
 @media (max-width: 1100px) {
+    .retrato,
     .autor {
         width: 50%;
         min-height: 25vh;
     }
 }
 
-.device {
-    width: 200px;
-    max-width: 25vw;
-    margin: auto;
+.featherlight .featherlight-close-icon {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    right: 0;
+    line-height: 25px;
+    width: 25px;
+    cursor: pointer;
+    text-align: center;
+    font-family: Arial,sans-serif;
+    background: #7b1315;
+    color: #f7f7f7;
+    border: 0;
+    padding: 0;
+}
+
+.featherlight .featherlight-content {
     position: relative;
-}
-
-
-/* CAMARA */
-
-.camara .lente {
-    position: absolute;
-    top: 41.5%;
-    transition: all 1s ease-in-out;
-    width: 36.5%;
-    left: 36.5%;
-}
-
-.autor:hover .camara .lente {
-    transform: rotate(180deg);
-}
-
-.camara .shutter {
-    position: absolute;
-    background: #a1c9da;
-    opacity: .3;
-    width: 10%;
-    height: 10%;
-    top: 54.5%;
-    left: 49.5%;
-    transform: scale(.5);
-    border-radius: 50%;
-    transition: all 1s ease-in-out;
-}
-
-.autor:hover .camara .shutter {
-    transform: scale(1);
-}
-
-
-/* SUPER 8 */
-
-.super8 .lente_1 {
-    position: absolute;
-    top: 31%;
-    transition: all 1s linear;
-    left: 69.5%;
-    width: 12.5%;
-}
-
-.super8 .lente_2 {
-    position: absolute;
-    top: 29%;
-    transition: all 1s ease-in-out;
-    width: 13%;
-    left: 81.5%;
-}
-
-.super8 .lente_2_label_1 {
-    position: absolute;
-    top: 34.5%;
-    transition: all 1s ease-in-out;
-    width: 1%;
-    height: 8%;
-    left: 88.5%;
-    opacity: .7;
-    background: rgba(255, 255, 255, .3);
-}
-
-.autor:hover .super8 .lente_1 {
-    transform: translate(-5px, 0);
-}
-
-.autor:hover .super8 .lente_2 {
-    transform: translate(-16px, 0);
-}
-
-.autor:hover .super8 .lente_2_label_1 {
-    transform: translate(-16px, -13px) scaleY(.8);
-    opacity: 1;
-}
-
-
-/* IPHONE */
-
-.iphone .screen {
-    position: absolute;
-    overflow: hidden;
-    width: 31.5%;
-    height: 56.5%;
-    top: 21.5%;
-    left: 34%;
-}
-
-.iphone .shine_1 {
-    position: absolute;
-    width: 200px;
-    height: 20px;
-    transform: rotate(45deg);
-    background: white;
-    opacity: .2;
-    top: 30px;
-    left: -50%;
-    transition: all 1s ease-in-out;
-}
-
-.iphone .shine_2 {
-    position: absolute;
-    width: 200px;
-    height: 7px;
-    transform: rotate(45deg);
-    background: white;
-    opacity: .2;
-    top: 80px;
-    left: -50%;
-    transition: all 1s ease-in-out;
-}
-
-.autor:hover .iphone .shine_1 {
-    top: 60px;
-}
-
-.autor:hover .iphone .shine_2 {
-    top: 100px;
-}
-
-
-/* CANON */
-
-.canon .screen {
-    width: 8%;
-    position: absolute;
-    top: 41.5%;
-    transition: all 1s ease-in-out;
-    right: 11%;
-}
-
-.autor:hover .canon .screen {
-    transform: translate(50%, -4px) rotate(-20deg);
+    text-align: left;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: auto;
+    padding: 5px 5px 0;
+    border-bottom: 5px solid transparent;
+    margin-left: 5%;
+    margin-right: 5%;
+    max-height: 95%;
+    background: #7b1315;
+    cursor: auto;
+    white-space: normal;
 }

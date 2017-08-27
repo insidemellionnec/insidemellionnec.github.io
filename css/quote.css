@@ -1,0 +1,66 @@
+.quote {
+    margin: auto;
+    font-size: 30px;
+    word-spacing: 8px;
+    letter-spacing: 2px;
+    text-align: justify;
+    line-height: 1.8em;
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+    width: 730px;
+    max-width: 90%;
+}
+
+.quote-credits {
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    width: 730px;
+    max-width: 90%;
+    text-align: right;
+    position: relative;
+    margin: 50px auto 0;
+    padding-right: 60px;
+}
+
+.quote-credits:before {
+    content: '';
+    display: inline-block;
+    border-top: 1px solid #7b151a;
+    margin-bottom: .3em;
+    width: 50px;
+    margin-right: 20px;
+}
+
+@media (max-width: 1023px) {
+    .quote-credits,
+    .quote {
+        font-size: 16px;
+        max-width: 70%;
+    }
+
+    .quote-credits {
+    }
+    .quote img {
+        display: block;
+        position: static;
+        margin: 16px auto;
+        width: 30px;
+    }
+}
+
+.left-quote {
+    width: 60px;
+    position: absolute;
+    left: -85px;
+    top: -16px;
+}
+
+.right-quote {
+    width: 60px;
+    position: absolute;
+    right: -75px;
+    bottom: -16px;
+    transform: rotate(180deg);
+}

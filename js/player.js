@@ -15,7 +15,7 @@ function Chapter(start, title, thumbnail) {
 
 var playerModel = {
     chapters: [
-        new Chapter("00:05", 'Introduction'),
+        new Chapter("00:00", 'Introduction'),
         new Chapter("01:40", 'Pourquoi Mellionnec?'),
         new Chapter("04:11", "Phase d'écriture"),
         new Chapter("06:35", 'Construction du récit'),
@@ -38,7 +38,7 @@ function onYouTubeIframeAPIReady() {
 
 function initPlayer() {
     if (window.YT && window.YT.loaded && $('#player').length) {
-        player = new Player('dwIDuRBHLnI', playerModel);
+        player = new Player('CKb7BRfFPjU', playerModel);
     }
 }
 
@@ -227,7 +227,10 @@ Player.prototype.isUnstarted = function() {
     return this.ytp.getPlayerState && this.ytp.getPlayerState() == -1;
 }
 
-Player.prototype.onStateChange = function() {
+Player.prototype.onStateChange = function(event) {
+    if (event.data < 0) {
+        return;
+    }
     if (this.isUnstarted()) {
         this.element.attr('ready', true);
     }
@@ -237,9 +240,7 @@ Player.prototype.onStateChange = function() {
         this.pause();
     }
 
-    if (window.YT && window.YT.loaded) {
-        this.render();
-    }
+    this.render();
 }
 
 Player.prototype.render = function() {
