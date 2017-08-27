@@ -237,7 +237,9 @@ Player.prototype.onStateChange = function() {
         this.pause();
     }
 
-    this.render();
+    if (window.YT && window.YT.loaded) {
+        this.render();
+    }
 }
 
 Player.prototype.render = function() {
